@@ -31,7 +31,6 @@ def track_and_center_face(frame, tracker):
     success, bbox = tracker.update(frame)
     if success:
         x, y, w, h = [int(v) for v in bbox]
-        # Optional: Draw the bounding box
         # cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2, 1)
         frame_center = (frame.shape[1] // 2, frame.shape[0] // 2)
         face_center = (x + w // 2, y + h // 2)
